@@ -11,33 +11,44 @@ public class ScoreTrakker {
 	private ArrayList<Student> students = new ArrayList<Student>();
 	
 	private void loadDataFile(String fileName) {
+		
 		Scanner inputStream;
+		Student s;
 		try {
-		inputStream = new Scanner(new File(fileName));
-		}catch(FileNotFoundException e) {
+			
+			inputStream = new Scanner(new File(fileName));
+			
+			while (inputStream.hasNextLine()) {
+				s = new Student(inputStream.next() + " " + inputStream.next(), inputStream.nextInt());
+				students.add(s);
+			}
+			
+		} catch(FileNotFoundException e) {
 			System.out.println("Error: File " + fileName + " was not found.");
 		}
-		
-		
-		
 		
 		
 	}
 	
 	private void printInOrder() {
 		Collections.sort(students);
+		
+		for(Student student : students) {
+			System.out.println(student);
+		}
 	}
 	
-	private void processFiles(){
-	//Calls loadDataFile passing in name of correctly formatted file
-	//Calls printInOrderMethod
-		
+	private void processFiles(String file){
+	// Calls loadDataFile passing in name of correctly formatted file
+	// Calls printInOrderMethod
+		loadDataFile(file);
+		printInOrder();
 	}
 	
 	
 	public static void main(String[] args) {
 		ScoreTrakker s1 = new ScoreTrakker();
-		s1.processFiles();
+		s1.processFiles("scores.txt");
 	}
 
 }
