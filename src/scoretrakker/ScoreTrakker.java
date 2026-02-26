@@ -1,6 +1,7 @@
 package scoretrakker;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 import java.io.FileNotFoundException;
 import java.io.File;
@@ -24,7 +25,7 @@ public class ScoreTrakker {
 	}
 	
 	private void printInOrder() {
-		
+		Collections.sort(students);
 	}
 	
 	private void processFiles(){
