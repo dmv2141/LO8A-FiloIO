@@ -39,8 +39,6 @@ public class ScoreTrakker {
 	}
 	
 	private void processFiles(String file){
-	// Calls loadDataFile passing in name of correctly formatted file
-	// Calls printInOrderMethod
 		loadDataFile(file);
 		printInOrder();
 	}
