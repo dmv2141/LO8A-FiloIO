@@ -1,0 +1,53 @@
+
+************************************************
+* Grader Note: MysterCoder is David Villalobos *
+************************************************
+
+
+commit 28eef4e4fbd1249d8df75ca939fe9f3692e4b5a4
+Author: MysterCoder <73602548+dmv2141@users.noreply.github.com>
+Date:   Thu Feb 26 18:38:25 2026 -0700
+
+    Added final comments
+
+commit 9d9f9351acd77436192ea5308dd47dee0cb50d73
+Author: MysterCoder <73602548+dmv2141@users.noreply.github.com>
+Date:   Thu Feb 26 18:36:50 2026 -0700
+
+    Full Functionality to Part 2
+
+commit 317966ad0a6aaf322cd1be324489b5cb8b497d1d
+Author: MysterCoder <73602548+dmv2141@users.noreply.github.com>
+Date:   Thu Feb 26 17:50:38 2026 -0700
+
+    Added more students in scores.txt of all orders to verify output
+
+commit 833f7947d986fef1c38fd3cb1ab26357b2338649
+Author: Chris Giere <cjgiere99@gmail.com>
+Date:   Thu Feb 26 15:08:24 2026 -0700
+
+    Updated ScoreTrakker.java with updated loadDataFile(), printInOrder() and processFiles()
+
+commit 452e8628e5162625b4820d412bdcfdb3efb4be65
+Author: Chris Giere <cjgiere99@gmail.com>
+Date:   Thu Feb 26 14:29:07 2026 -0700
+
+    added printInOrder
+
+commit 306a5526a3097fb548caf682751ac651f6ab1f27
+Author: MysterCoder <73602548+dmv2141@users.noreply.github.com>
+Date:   Thu Feb 26 14:20:10 2026 -0700
+
+    Added .gitignore
+
+commit 852bc62d52fcc6d91db34133e43a36f15e953777
+Author: MysterCoder <73602548+dmv2141@users.noreply.github.com>
+Date:   Wed Feb 25 21:29:49 2026 -0700
+
+    Added proper dependencies, loadDataFile <-- added inputStream with valid exception handling
+
+commit c71cdb186f415aa3cf89f2ac3f00ce84fbca23cd
+Author: MysterCoder <73602548+dmv2141@users.noreply.github.com>
+Date:   Wed Feb 25 21:11:37 2026 -0700
+
+    Starter Code Setup
