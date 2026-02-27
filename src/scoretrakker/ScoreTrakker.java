@@ -9,24 +9,37 @@ import java.io.File;
 public class ScoreTrakker {
 	
 	private ArrayList<Student> students = new ArrayList<Student>();
+	private String[] files = {"scores.txt", "badscore.txt", "nofile.txt" };
 	
-	private void loadDataFile(String fileName) {
+	private void loadDataFile(String fileName) throws FileNotFoundException{
 		
-		Scanner inputStream;
 		Student s;
-		try {
-			
-			inputStream = new Scanner(new File(fileName));
+		try (Scanner inputStream = new Scanner(new File(fileName))){ //Try Statement (with Resources) 
 			
 			while (inputStream.hasNextLine()) {
-				s = new Student(inputStream.next() + " " + inputStream.next(), inputStream.nextInt());
-				students.add(s);
+				String name = "";
+                String scoreLine = "";
+				int score;
+				
+				name = inputStream.nextLine();
+				
+				if (!inputStream.hasNextLine()) //Verify consistent input
+                    break;
+				
+				scoreLine = inputStream.nextLine();
+				
+				try {
+					score = Integer.parseInt(scoreLine);
+					s = new Student(name, score);
+					students.add(s);
+				}
+				catch(NumberFormatException e) {
+					System.out.println("Incorrect Format for " + name + " not a valid score: " + scoreLine + "\n");
+				}
+				
 			}
 			
-		} catch(FileNotFoundException e) {
-			System.out.println("Error: File " + fileName + " was not found.");
 		}
-		
 		
 	}
 	
@@ -38,15 +51,27 @@ public class ScoreTrakker {
 		}
 	}
 	
-	private void processFiles(String file){
-		loadDataFile(file);
-		printInOrder();
+	private void processFiles(){
+		for (String file : files) {
+
+            students.clear();
+
+            try {
+                loadDataFile(file);
+                printInOrder();
+            }
+            catch (FileNotFoundException e) {
+                System.out.println("Can't open file: " + file);
+            }
+
+            System.out.println();
+        }
 	}
 	
 	
 	public static void main(String[] args) {
 		ScoreTrakker s1 = new ScoreTrakker();
-		s1.processFiles("scores.txt");
+		s1.processFiles();
 	}
 
 }

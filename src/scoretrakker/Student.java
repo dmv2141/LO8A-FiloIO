@@ -16,7 +16,7 @@ public class Student implements Comparable<Student>{
 	}
 	
 	public int compareTo(Student other) { //Structured for Descending Order
-		if(this.score > other.score)
+		if(this.score > other.score)	  //Students compared based on Grade
 			return -1;
 		else if(this.score < other.score)
 			return 1;
