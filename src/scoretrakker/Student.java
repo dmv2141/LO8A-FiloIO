@@ -1,3 +1,10 @@
+/*
+ * LO8A File IO Project
+ * David Villalobos
+ * Chris Giere
+ * Institution: Colorado School of Mines
+ */
+
 package scoretrakker;
 
 public class Student implements Comparable<Student>{
